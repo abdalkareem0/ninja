@@ -41,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log($"OnCollisionEnter called with {collision.gameObject.name}");
         if (collision.gameObject.tag.Contains("Wall"))  // or if(gameObject.CompareTag("YourWallTag"))
         {
             LeanTween.cancel(gameObject);
@@ -98,10 +97,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (characterPosition == CharacterPosition.Center)
             return;
-        Debug.Log($"Swipe values are {direction} and {characterPosition}");
         if ((int)direction == (int)characterPosition)
             return;
-        Debug.Log($"DoSwipe called with direction {direction}");
         var goTo = direction == MoveDirection.Left ? WallsController.LeftWallX : WallsController.RightWallX;
         characterPosition = CharacterPosition.Center;
         LeanTween.moveX(gameObject, goTo, SWIPE_DURATION_SEC)
