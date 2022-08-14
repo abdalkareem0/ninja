@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
+    private float wallHeight;
+
+
+    void Start()
+    {
+        wallHeight = GetComponent<SpriteRenderer>().bounds.size.y;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -18,7 +26,6 @@ public class Wall : MonoBehaviour
 
         if (Camera.main.WorldToViewportPoint(position).y < -0.6f)
         {
-            var wallHeight = GetComponent<SpriteRenderer>().bounds.size.y;
             position.y += wallHeight * 2.8f;
             transform.position = position;
         }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class WallsController : MonoBehaviour
 {
-    public static float LeftWallX { get; private set; }
-    public static float RightWallX { get; private set; }
     void Awake()
     {
         Camera myCamera = Camera.main;
@@ -21,7 +19,6 @@ public class WallsController : MonoBehaviour
             var position = wall.transform.position;
             position.x = -width / 2 + wall.GetComponent<SpriteRenderer>().bounds.size.x / 2;
             wall.transform.position = position;
-            LeftWallX = wall.transform.position.x;
         }
 
         // Adjust position for right walls
@@ -30,7 +27,6 @@ public class WallsController : MonoBehaviour
             var position = wall.transform.position;
             position.x = +width / 2 - wall.GetComponent<SpriteRenderer>().bounds.size.x / 2;
             wall.transform.position = position;
-            RightWallX = wall.transform.position.x;
         }
 
 
