@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private const float SWIPE_TIME_THRESHOLD = 0.3f;
     private const float SWIPE_DIST_THRESHOLD = 0.25f; //25% from screen width 
     private const float SWIPE_DURATION_SEC = 0.3f; //0.3sec
-    private const float JUMP_DURATION_SEC = 0.2f;
+    private const float JUMP_DURATION_SEC = 0.4f;
     private const float JUMP_HEIGHT = 0.2f;
 
     //Swipe attrs
